@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
-const ChannelsList = ({ data: { loading, error, channels }}) => {
-  if(loading) {
-    return <p>Loading...</p>;
+const ChannelsList = ({ data: {loading, error, channels }}) => {
+  if (loading) {
+    return <p>Loading ...</p>;
   }
-  if(error) {
+  if (error) {
     return <p>{error.message}</p>;
   }
+
   return (
-    <ul>
-      {channels.map((ch) => {
-        return <li key={ch.id}>{ch.name}</li>
-      })}
-    </ul>
-  )
-}
+    <div className="channelsList">
+      { channels.map( ch => <div key={ch.id} className="channel">{ch.name}</div> ) }
+    </div>
+  );
+};
 
 const channelsListQuery = gql`
    query ChannelsListQuery {

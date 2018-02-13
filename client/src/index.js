@@ -17,17 +17,16 @@ import {
   makeExecutableSchema,
   addMockFunctionsToSchema
 } from 'graphql-tools';
-import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils';
+
 import { typeDefs } from './schema';
 
 const schema  = makeExecutableSchema({ typeDefs });
 addMockFunctionsToSchema({ schema });
 
-const mockNetworkInterface = mockNetworkInterfaceWithSchema({ schema });
 
 const client = new ApolloClient({
-  link: createHttpLink({ uri: 'http://localhost:3000' }),
-  cache: new InMemoryCache()
+  link: createHttpLink({ uri: 'http://localhost:4000/graphql' }),
+  cache: new InMemoryCache(),
 });
 
 const WrappedApp = (
