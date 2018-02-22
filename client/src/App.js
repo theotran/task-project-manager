@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Divider } from 'semantic-ui-react'
 import './App.css';
 // import ChannelsListWithData from './components/ChannelsList';
-import TaskForm from './components/TaskForm';
+import TaskForm from './components/CustomerView/TaskForm';
+import TaskTable from './components/TaskerView/TaskTable';
 
 class App extends Component {
   render() {
@@ -9,6 +11,8 @@ class App extends Component {
         <div className="App">
           <h1 className="navbar">Tasker</h1>
           <TaskForm />
+          <Divider />
+          <TaskTable />
           {/* <ChannelsListWithData /> */}
         </div>
     );
