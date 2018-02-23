@@ -4,7 +4,8 @@ html, body {
   padding: 0;
   margin: 0;
   height: 100%;
-  background-image: linear-gradient(175deg, #2b3658 0%, #523e5b 100%);
+  // background-image: linear-gradient(175deg, #2b3658 0%, #523e5b 100%);
+  background-image: linear-gradient(175deg, #2b3658 0%, #510a0a 100%);
 }
 
 .App-logo {
@@ -34,15 +35,15 @@ html, body {
   align-items: center;
 }
 
-.navbar:before {
-  content: "";
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  background-image: url('./apollo-logo.svg');
-  background-size: contain;
-  margin-right: 10px;
-}
+// .navbar:before {
+//   content: "";
+//   height: 30px;
+//   width: 30px;
+//   display: inline-block;
+//   background-image: url('./apollo-logo.svg');
+//   background-size: contain;
+//   margin-right: 10px;
+// }
 
 div.channelsList {
   padding: 0 30px;
