@@ -13,8 +13,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <AppContentContainer>
-            {/* <ChannelsList /> */}
-            <PaymentForm />
+            <ChannelsList />
           </AppContentContainer>
           <Footer />
         </div>

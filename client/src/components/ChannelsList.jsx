@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import AddChannel from './AddChannel';
 
-const ChannelsList = ({ data: {loading, error, channels }}) => {
+const ChannelsList = ({ data: {loading, error, tasks }}) => {
   if (loading) {
     return <p>Loading ...</p>;
   }
@@ -14,16 +14,21 @@ const ChannelsList = ({ data: {loading, error, channels }}) => {
   return (
     <div className="channelsList">
       <AddChannel />
-      { channels.map( ch => <div key={ch.id} className="channel">{ch.name}</div> ) }
+      { tasks.map( ch => <div key={ch.id} className="channel">{ch.taskName}</div> ) }
     </div>
   );
 };
 
 const channelsListQuery = gql`
-   query ChannelsListQuery {
-     channels {
+   query tasks {
+     tasks {
        id
-       name
+       taskName
+       taskerUsername
+       taskerEmail
+       taskerPhone
+       category
+       price
      }
    }
  `;
