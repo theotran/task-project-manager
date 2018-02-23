@@ -6,7 +6,7 @@ class AppContentContainer extends Component {
 
   render() {
     return (
-      <div className="appContentContainer">
+      <div className="AppContentContainer">
         {this.props.children}
       </div>
     )
