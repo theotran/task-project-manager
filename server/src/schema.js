@@ -6,19 +6,33 @@ import {
 import { resolvers } from './resolvers';
 
 const typeDefs = `
-  type Channel {
+  type Task {
      id: ID!
-     name: String
+    taskName: String!
+    taskerUsername: String
+    taskerEmail: String
+    taskerPhone: String
+    timeline: String
+    category: String
+    price: String
   }
 
   type Query {
-     channels: [Channel]    # "[]" means this is a list of channels
+     tasks: [Task]    # "[]" means this is a list of tasks
   }
 
   # Mutation root type, used to define all mutations.
   type Mutation {
-    # Mutation to add a new channel to the list of channels, returning a a channel object
-    addChannel(name: String!): Channel
+    # Mutation to add a new task to the list of tasks, returning a task object
+    addTask(
+      taskName: String!
+      taskerUsername: String
+      taskerEmail: String
+      taskerPhone: String
+      timeline: String
+      category: String
+      price: String
+    ): Task
   }
 `;
 
