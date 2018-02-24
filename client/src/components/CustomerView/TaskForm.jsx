@@ -35,13 +35,14 @@ class TaskForm extends Component {
         <h1>Task Form</h1>
         <Form>
           <Form.Group className='row' widths='equal'>
-            <Form.Input fluid className='col-md-6' label='First Name*' placeholder='First Name' />
-            <Form.Input fluid className='col-md-6' label='Last Name*' placeholder='Last Name' />
+            <Form.Input fluid className='col-md-4' label='First Name*' placeholder='First Name' />
+            <Form.Input fluid className='col-md-4' label='Last Name*' placeholder='Last Name' />
+            <Form.Input fluid className='col-md-4' label='Username' placeholder='Username' />
           </Form.Group>
           <Form.Group className='row' widths='equal'>
-            <Form.Input fluid className='col-md-4' label='Username' placeholder='Username' />
             <Form.Input fluid className='col-md-4' label='Email*' placeholder='Email' />
             <Form.Input fluid className='col-md-4' label='Cell Phone #*' placeholder='Cell Phone #' />
+            <Form.Input fluid className='col-md-4' label='Effort Level' placeholder='Estimated amount of hours to complete task' />
           </Form.Group>
           <Form.Group className='row' widths='equal'>
             <Form.Select fluid className='col-md-3' label='Timeline*' options={timeline} placeholder='Pick a completion time' />
