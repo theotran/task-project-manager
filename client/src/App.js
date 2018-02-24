@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Route,
+  Link,
+} from 'react-router-dom'
 import { Divider } from 'semantic-ui-react'
 import './App.css';
 import NavBar from './components/NavBar';
@@ -15,9 +19,19 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <AppContentContainer>
-            <TaskForm />
-            <Divider />
-            <TaskTable />
+            <BrowserRouter>
+              <div>
+                <ul>
+                  <li><Link to='/taskform'>Task Form</Link></li>
+                  <li><Link to='/tasktable'>Task Table</Link></li>
+                </ul>
+
+                <hr />
+
+                <Route path='/taskform' component={TaskForm} />
+                <Route path='/tasktable' component={TaskTable} />
+              </div>
+            </BrowserRouter>
           </AppContentContainer>
           <Footer />
         </div>
