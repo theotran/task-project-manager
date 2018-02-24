@@ -1,11 +1,17 @@
 export const typeDefs = `
 
-type Channel {
+type Task {
   id: ID!
-  name: String
+  taskName: String
+  taskerUsername: String
+  taskerEmail: String
+  taskerPhone: String
+  timeline: String
+  category: String
+  price: String
 }
 
 type Query {
-  channels: [Channel]
+  tasks: [Task]
 }
 `;

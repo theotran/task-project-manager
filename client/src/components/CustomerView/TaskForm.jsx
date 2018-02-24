@@ -29,22 +29,28 @@ class TaskForm extends Component {
 
   handleChange = (e, { value }) => this.setState({ value })
 
-  render(){
+  render() {
     return (
       <div className='taskForm-container'>
         <h1>Task Form</h1>
         <Form>
           <Form.Group className='row' widths='equal'>
-            <Form.Input fluid className='col-md-3' label='First Name*' placeholder='First Name' />
-            <Form.Input fluid className='col-md-3' label='Last Name*' placeholder='Last Name' />
-            <Form.Input fluid className='col-md-3' label='Email*' placeholder='Email' />
-            <Form.Input fluid className='col-md-3' label='Cell Phone #*' placeholder='Cell Phone #' />
+            <Form.Input fluid className='col-md-6' label='First Name*' placeholder='First Name' />
+            <Form.Input fluid className='col-md-6' label='Last Name*' placeholder='Last Name' />
+          </Form.Group>
+          <Form.Group className='row' widths='equal'>
+            <Form.Input fluid className='col-md-4' label='Username' placeholder='Username' />
+            <Form.Input fluid className='col-md-4' label='Email*' placeholder='Email' />
+            <Form.Input fluid className='col-md-4' label='Cell Phone #*' placeholder='Cell Phone #' />
           </Form.Group>
           <Form.Group className='row' widths='equal'>
             <Form.Select fluid className='col-md-3' label='Timeline*' options={timeline} placeholder='Pick a completion time' />
             <Form.Select fluid className='col-md-3' label='Category*' options={description} placeholder='Pick a category' />
             <Form.Input fluid className='col-md-3' label='Price*' placeholder='Price willing to pay' />
             <Form.Select fluid className='col-md-3' label='Hourly/Per Job*' options={payType} placeholder='Hourly/Per Job' />
+          </Form.Group>
+          <Form.Group className='row' widths='equal'>
+            {/* <Form.Select fluid className='col-md-3' label='Rate' options={payType} placeholder='Hourly/Per Job' /> */}
           </Form.Group>
           <Form.TextArea label='Description*' placeholder='Task description' />
           <Form.Checkbox label='I agree to the Terms and Conditions' />
