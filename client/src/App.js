@@ -1,40 +1,36 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter,
-  Route,
-  Link,
-} from 'react-router-dom'
-import { Divider } from 'semantic-ui-react'
+import { Route } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import AppContentContainer from './components/AppContentContainer';
+import Home from './components/Home';
+import SignIn from './components/SignIn';
 import TaskForm from './components/CustomerView/TaskForm';
-import TaskTable from './components/TaskerView/TaskTable';
+import TaskList from './components/TaskerView/TaskList';
 import PaymentForm from './components/PaymentForm';
+import AppContentContainer from './components/AppContentContainer';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
+    // console.log('APP PROPS', this.props);
     return (
-        <div className="App">
-          <NavBar />
-          <AppContentContainer>
-            <BrowserRouter>
-              <div>
-                <ul>
-                  <li><Link to='/taskform'>Task Form</Link></li>
-                  <li><Link to='/tasktable'>Task Table</Link></li>
-                </ul>
-
-                <hr />
-
-                <Route path='/taskform' component={TaskForm} />
-                <Route path='/tasktable' component={TaskTable} />
-              </div>
-            </BrowserRouter>
-          </AppContentContainer>
-          <Footer />
-        </div>
+      <div className="App">
+        <NavBar
+          home={Home}
+          signIn={SignIn}
+          taskForm={TaskForm}
+          taskList={TaskList}
+        />
+        <AppContentContainer>
+          <div>
+            <Route exact path='/' component={Home} />
+            <Route path='/sign-in' component={SignIn} />
+            <Route path='/task-form' component={TaskForm} />
+            <Route path='/task-list' component={TaskList} />
+          </div>
+        </AppContentContainer>
+        <Footer />
+      </div>
     );
   }
 }

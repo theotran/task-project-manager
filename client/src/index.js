@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import './Semantic-UI-master/dist/semantic.css';
 import App from './App';
@@ -24,7 +24,6 @@ import { typeDefs } from './schema';
 
 const schema  = makeExecutableSchema({ typeDefs });
 addMockFunctionsToSchema({ schema });
-
 
 const client = new ApolloClient({
   link: createHttpLink({ uri: 'http://localhost:4000/graphql' }),
